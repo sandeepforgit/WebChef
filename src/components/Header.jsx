@@ -5,7 +5,7 @@ function Header() {
     <header class="bg-orange-500 flex items-center justify-between w-screen">
       <div class="flex items-center">
         <img class="w-20" src="https://png.pngtree.com/png-clipart/20221019/original/pngtree-master-chef-logo-illustration-png-image_8703909.png" alt="logo"/>
-        <h3>WebChef</h3>
+        <h3 class="font-medium">WebChef</h3>
       </div>
       <ul class="text-lg font-medium flex gap-5 mr-10">
         <NavLink 
