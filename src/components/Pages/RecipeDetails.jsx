@@ -1,12 +1,11 @@
 import axios from 'axios'
 import React, { useState } from 'react'
 import { useParams } from 'react-router-dom'
-import Card from '../Card'
+import Card from '../Card1'
 
 
 function RecipeDetails() {
     const {mealId} = useParams()
-    console.log(mealId)
     const [meal, setMeal] = useState(null)
     const fetchRecipe = async () => {
         const {data} = await axios.get(`https://www.themealdb.com/api/json/v1/1/lookup.php?i=${mealId}`)

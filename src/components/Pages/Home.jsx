@@ -1,4 +1,4 @@
-import React, { useContext, useState } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import axios from 'axios'
 import SearchResults from '../SearchResults'
 import { resultsContext } from '../Context/resultsContext'
@@ -11,12 +11,13 @@ function Home() {
     const info = data.meals
     setResults(info)
   }
+  useEffect(() => {fetchResults()})
   return (
     <>
       <section class="flex justify-center items-center h-72 w-screen" style={{backgroundImage: `url("https://img.freepik.com/premium-photo/wooden-texture-kitchen-table-panoramic-high-resolution-background_84485-1446.jpg")`}}>
         <div class="flex gap-3 ">
           <input
-          value = {searchTerm}
+          value={searchTerm}
           onChange={(e) => setSearchTerm(e.target.value)}
           class="placeholder:text-zinc-500 h-7 w-52 rounded outline outline-2 hover:outline-offset-2 bg-transparent outline-black transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-105  duration-300"
           placeholder='Search Recipe'/>
@@ -28,6 +29,9 @@ function Home() {
           </button>
         </div>   
       </section>
+      
+      {searchTerm != "" && results.length > 0 &&  <h1 class="font-bold text-2xl text-center p-7">Your Search Results</h1>}
+      
       {
        results.length > 0 &&  <SearchResults/>
       }

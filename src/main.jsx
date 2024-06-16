@@ -9,6 +9,8 @@ import Categories from './components/Pages/Categories.jsx'
 import About from './components/Pages/About.jsx'
 import ProvideResultsContext from './components/Context/resultsContext.jsx'
 import RecipeDetails from './components/Pages/RecipeDetails.jsx'
+import CategoryContextProvider from './components/Context/CategoriesContext.jsx'
+import CategoryItems from './components/Pages/CategoryItems.jsx'
 
 const route = createBrowserRouter(
   createRoutesFromElements(
@@ -16,6 +18,7 @@ const route = createBrowserRouter(
       <Route path="" element={<Home/>}/>
       <Route path="/:mealId" element={<RecipeDetails/>} />
       <Route path="Categories" element={<Categories/>}/>
+      <Route path="Categories/:Category" element={<CategoryItems/>}/>
       <Route path="About" element={<About/>}/>
     </Route>
   )
@@ -23,9 +26,11 @@ const route = createBrowserRouter(
 
 
 ReactDOM.createRoot(document.getElementById('root')).render(
-  <React.StrictMode>
+  
     <ProvideResultsContext>
+    <CategoryContextProvider>
     <RouterProvider router={route} />
+    </CategoryContextProvider>
     </ProvideResultsContext>
-  </React.StrictMode>,
+  
 )

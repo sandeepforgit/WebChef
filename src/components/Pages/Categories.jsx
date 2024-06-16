@@ -1,8 +1,26 @@
-import React from 'react'
+import axios from 'axios';
+import React, { useContext, useState } from 'react'
+import Card2 from '../Card2';
+import { categoryContext } from '../Context/CategoriesContext';
 
 function Categories() {
+  const {categories, setCategories} = useContext(categoryContext)
+  const fetchCategories = async () => {
+    const {data} = await axios.get("https://www.themealdb.com/api/json/v1/1/categories.php")
+    setCategories(data.categories)
+  }
+  fetchCategories()
   return (
-    <div>Categories</div>
+    <>
+      <h1 class="text-center font-bold text-3xl m-4">Categories</h1>
+      <div class="grid grid-cols-3 place-items-center">
+        {
+          categories.map((Category)=>(
+              Category.strCategory != "Beef" && <Card2 category={Category}/>
+          ))
+        }
+      </div>
+    </>
   )
 }
 
