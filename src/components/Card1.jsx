@@ -3,10 +3,13 @@ import { NavLink } from 'react-router-dom'
 
 function Card({item}) {
   return (
-    <div class="bg-white rounded-lg shadow-lg m-3 w-60 h-60 grid items-center justify-center hover:scale-105">
-        <NavLink to={`/${item.idMeal}`}><img class="w-44 rounded-md" src={item.strMealThumb}/></NavLink>
-        <h2 class="text-center">{item.strMeal}</h2>
-    </div>
+  <NavLink to={`/${item.idMeal}`}>
+      <div class="bg-white rounded-lg shadow-lg m-3 w-60 h-60 grid items-center justify-center hover:scale-110">
+          <img class="w-44 rounded-md" src={item.strMealThumb}/>
+          <h2 class="text-center m-2">{item.strMeal}</h2>
+          
+      </div>
+    </NavLink>
   )
 }
 

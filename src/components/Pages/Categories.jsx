@@ -13,7 +13,7 @@ function Categories() {
   return (
     <>
       <h1 class="text-center font-bold text-3xl m-4">Categories</h1>
-      <div class="grid grid-cols-3 place-items-center">
+      <div class="grid grid-cols-1 sm:grid-cols-3 place-items-center">
         {
           categories.map((Category)=>(
               Category.strCategory != "Beef" && <Card2 category={Category}/>

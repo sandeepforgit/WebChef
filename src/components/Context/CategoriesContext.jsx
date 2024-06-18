@@ -6,8 +6,9 @@ const categoryContext = createContext();
 
 const CategoryContextProvider = ({children}) => {
     const [categories, setCategories] = useState([]);
+    const [meals, setMeals] = useState([]);
     return (
-    <categoryContext.Provider value={{categories, setCategories}}>
+    <categoryContext.Provider value={{categories, setCategories, meals, setMeals}}>
         {children}
     </categoryContext.Provider>
     )
