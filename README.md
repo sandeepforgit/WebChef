@@ -1,8 +1,9 @@
-# React + Vite
+# WebChef: Your Online Recipe Book
+### User can browse through over 10,000 recipes.
+Some Screenshots of the website
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+<img src="Screenshot1.png" width="500" height="270">
 
-Currently, two official plugins are available:
+<img src="Screenshot3.png" width="500" height="270">
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+<img src="Screenshot2.png" width="500" height="270">
